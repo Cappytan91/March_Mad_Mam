@@ -1,0 +1,23 @@
+<component name="libraryTable">
+  <library name="ant-1.10.12">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/ant-1.10.12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/ant-launcher-1.10.12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/commons-codec-1.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/commons-collections4-4.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/commons-compress-1.21.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/commons-io-2.11.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/commons-math3-3.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/curvesapi-1.07.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/poi-5.2.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/poi-excelant-5.2.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/poi-ooxml-5.2.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/poi-ooxml-lite-5.2.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/SparseBitSet-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/xmlbeans-5.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/log4j-api-2.18.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

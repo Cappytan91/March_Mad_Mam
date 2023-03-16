@@ -1,0 +1,10 @@
+// input all the animals here (start on line 3) [line 3 is animal 1, the animal underneath goes against it, and so on] {Keep the top 2 lines for the program to work} :)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+pig
+cat
+mouse
+dog
+bunny
+human
+whale
+tree
