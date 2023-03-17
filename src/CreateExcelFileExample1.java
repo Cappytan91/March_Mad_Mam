@@ -1,77 +1,48 @@
-// Java program to write data in excel sheet using java code
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.ArrayList;
 
-import java.io.File;
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import java.io.FileOutputStream;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
 
+/**
+ * A very simple program that writes some data to an Excel file
+ * using the Apache POI library.
+ * @author www.codejava.net
+ *
+ */
 public class CreateExcelFileExample1 {
 
-    // any exceptions need to be caught
-    public static void main(String[] args) throws Exception
-    {
-        // workbook object
+    public static void main(String[] args) throws IOException {
         XSSFWorkbook workbook = new XSSFWorkbook();
+        XSSFSheet sheet = workbook.createSheet("Java Books");
 
-        // spreadsheet object
-        XSSFSheet spreadsheet
-                = workbook.createSheet("Bracket or something");
+        ArrayList<ArrayList<Object>> bookData = new ArrayList<ArrayList<Object>>();
 
-        // creating a row object
-        XSSFRow row;
+        int rowCount = 0;
 
-        // This data needs to be written (Object[])
-        Map<String, Object[]> MamBracket = new TreeMap<String, Object[]>();
+        for (ArrayList<Object> aBook : bookData) {
+            Row row = sheet.createRow(++rowCount);
 
-        MamBracket.put(
-                "1",
-                new Object[] { "Roll No", "NAME", "Year" });
+            int columnCount = 0;
 
-        MamBracket.put("2", new Object[] { "128", "Aditya",
-                "2nd year" });
-
-        MamBracket.put(
-                "3",
-                new Object[] { "129", "Narayana", "2nd year" });
-
-        MamBracket.put("4", new Object[] { "130", "Mohan",
-                "2nd year" });
-
-        MamBracket.put("5", new Object[] { "131", "Radha",
-                "2nd year" });
-
-        MamBracket.put("6", new Object[] { "132", "Gopal",
-                "2nd year" });
-
-        Set<String> keyid = MamBracket.keySet();
-
-        int rowid = 0;
-
-        // writing the data into the sheets...
-
-        for (String key : keyid) {
-
-            row = spreadsheet.createRow(rowid++);
-            Object[] objectArr = MamBracket.get(key);
-            int cellid = 0;
-
-            for (Object obj : objectArr) {
-                Cell cell = row.createCell(cellid++);
-                cell.setCellValue((String)obj);
+            for (Object field : aBook) {
+                Cell cell = row.createCell(++columnCount);
+                if (field instanceof String) {
+                    cell.setCellValue((String) field);
+                } else if (field instanceof Integer) {
+                    cell.setCellValue((Integer) field);
+                }
             }
+
         }
 
-        // .xlsx is the format for Excel Sheets...
-        // writing the workbook into the file...
-        FileOutputStream out = new FileOutputStream(
-                new File("C:\\Users\\js4678\\Desktop\\brack.xlsx"));
 
-        workbook.write(out);
-        out.close();
+        try (FileOutputStream outputStream = new FileOutputStream("JavaBooks.xlsx")) {
+            workbook.write(outputStream);
+        }
     }
+
 }
